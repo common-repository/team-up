@@ -1,0 +1,306 @@
+.column-team-up-draggable,
+.column-team-up-undraggable {
+	width: 36px;
+	text-align: center;
+	position: relative;
+}
+
+.column-team-up-draggable svg,
+.column-team-up-undraggable svg {
+	width: 16px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	cursor: s-resize;
+}
+
+.team-up-dragging svg,
+.column-team-up-draggable svg:hover {
+	color: #0095ee;
+}
+
+.column-team-up-undraggable svg {
+	cursor: default;
+}
+
+.team-up-dragging {
+	transform: scale(1.01);
+	box-shadow: 0 0 0 0.5px #0095ee, 0 5px 12px -4px;
+	z-index: 10000;
+}
+
+#the-list tr:nth-child(odd) {
+	background: #f9f9f9;
+}
+
+#the-list tr:nth-child(even) {
+	background: #fff;
+}
+
+#the-list.nodrag {
+	opacity: .5;
+}
+
+.team-up-checkbox > input {
+	display: none !important;
+}
+
+.team-up-check {
+	transform: scale(1.2);
+	display: inline-block;
+	border-radius: 50%;
+	background: #fff;
+	vertical-align: middle;
+	cursor: pointer;
+	transition: border .3s ease;
+	width: 52px;
+	height: 52px;
+	position: relative;
+	border: 2px solid #fff;
+}
+
+.team-up-check {
+	margin-right: 12px;
+	transform: scale(1);
+	border: 2px solid #eee;
+}
+
+.team-up-checkbox[data-attr="enabled"] .team-up-check {
+	border-color: #fff;
+}
+
+.team-up-option .team-up-value {
+	text-transform: capitalize;
+}
+
+.team-up-check svg {
+	opacity: 0.2;
+	stroke: #333;
+	transition: opacity .3s .1s ease;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate3d( -50%, -50%, 0 );
+	width: 66.66%;
+	height: 66.66%;
+}
+
+.team-up-checkbox input:checked + .team-up-check,
+.team-up-option .team-up-checkbox[data-attr="enabled"] input + .team-up-check {
+	animation: team_up_check .5s cubic-bezier(0.895, 0.030, 0.685, 0.220) forwards;
+	background: #0095ee;
+}
+
+.team-up-checkbox input:checked + .team-up-check .icon,
+.team-up-option .team-up-checkbox[data-attr="enabled"] input + .team-up-check .icon {
+	opacity: 1;
+	transform: translate3d( -50%, -50%, 0 ) scale(1);
+	stroke: #fff;
+	animation: team_up_icon .3s cubic-bezier(1.000, 0.008, 0.565, 1.650) .1s 1 forwards;
+}
+
+.team-up-option.team-up-reloading .team-up-checkbox input + .team-up-check {
+	animation: 1s option_reload linear infinite;
+	background-color: #0095ee !important;
+}
+
+.team-up-option.team-up-reloading .team-up-checkbox input + .team-up-check svg {
+  display: none; }
+
+.team-up-option.team-up-reloading .team-up-checkbox input + .team-up-check:after {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  background: #fff; }
+
+
+.edit-php .column-team-up-break-after {
+	width: 40px;		/* For "Mask" Label */
+	text-align: center;
+}
+
+.edit-php .column-team-up-break-after {
+	position: relative;
+}
+
+.edit-php .column-team-up-break-after .team-up-break div:not(:empty) {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 40px;
+	height: 40px;
+	background: #fff;
+	border-radius: 20px;
+	overflow: hidden;
+}
+
+.edit-php .column-team-up-break-after .team-up-break {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	stroke: #000;
+}
+
+.edit-php .column-team-up-break-after .team-up-break.enabled div:not(:empty) {
+	box-shadow: 0 0 0 1px #0095ee;
+	background: #0095ee;
+}
+
+.edit-php .column-team-up-break-after .team-up-break div:not(:empty) {
+	box-shadow: 0 0 0 1px rgba(0,0,0,.175);
+	transform: translate(-50%,-50%);
+	border-radius: 100px;
+}
+
+.edit-php .column-team-up-break-after .team-up-break.enabled svg {
+	stroke: #fff;
+	opacity: 1;
+}
+
+.edit-php .column-team-up-break-after .team-up-break div:hover {
+	cursor: pointer;
+	background: #22b7ff !important;
+	opacity: 1;
+}
+
+.edit-php .column-team-up-break-after .team-up-break div:hover svg {
+	stroke: #fff;
+}
+
+.edit-php .column-team-up-break-after .team-up-break div.team-up-reloading {
+	animation: 1s edit_option_reload linear infinite;
+	background-color: #0095ee !important;
+}
+
+.edit-php .column-team-up-break-after .team-up-break div.team-up-reloading svg {
+	display: none;
+}
+
+.edit-php .column-team-up-break-after .team-up-break div.team-up-reloading:after {
+	content: "";
+	display: block;
+	width: 8px;
+	height: 8px;
+	border-radius: 10px;
+	position: absolute;
+	top: 50%;
+	left: 25%;
+	transform: translate(-50%,-50%);
+	background: #fff;
+}
+
+.wrap .team-up-message.notice {
+    position: absolute;
+    top: 10px;
+    left: 250px;
+}
+
+@keyframes team_up_reload {
+	0% {
+		-webkit-transform: translateY(-50%) rotate(0deg);
+		-ms-transform: translateY(-50%) rotate(0deg);
+		-moz-transform: translateY(-50%) rotate(0deg);
+		-o-transform: translateY(-50%) rotate(0deg);
+		transform: translateY(-50%) rotate(0deg);
+	}
+	100% {
+		-webkit-transform: translateY(-50%) rotate(360deg);
+		-ms-transform: translateY(-50%) rotate(360deg);
+		-moz-transform: translateY(-50%) rotate(360deg);
+		-o-transform: translateY(-50%) rotate(360deg);
+		transform: translateY(-50%) rotate(360deg);
+	}
+}
+
+@keyframes edit_option_reload {
+	0% {
+		-webkit-transform: translate(-50%,-50%) rotate(0deg);
+		-ms-transform: translate(-50%,-50%) rotate(0deg);
+		-moz-transform: translate(-50%,-50%) rotate(0deg);
+		-o-transform: translate(-50%,-50%) rotate(0deg);
+		transform: translate(-50%,-50%) rotate(0deg);
+	}
+	100% {
+		-webkit-transform: translate(-50%,-50%) rotate(360deg);
+		-ms-transform: translate(-50%,-50%) rotate(360deg);
+		-moz-transform: translate(-50%,-50%) rotate(360deg);
+		-o-transform: translate(-50%,-50%) rotate(360deg);
+		transform: translate(-50%,-50%) rotate(360deg);
+	}
+}
+
+@keyframes option_reload {
+	0% {
+		-webkit-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+@keyframes team_up_icon {
+	0% {
+		-webkit-opacity: 0;
+		-ms-opacity: 0;
+		-moz-opacity: 0;
+		-o-opacity: 0;
+		opacity: 0;
+		-webkit-transform: translate3d(-50%, -50%, 0) scale(0.3);
+		-ms-transform: translate3d(-50%, -50%, 0) scale(0.3);
+		-moz-transform: translate3d(-50%, -50%, 0) scale(0.3);
+		-o-transform: translate3d(-50%, -50%, 0) scale(0.3);
+		transform: translate3d(-50%, -50%, 0) scale(0.3);
+	}
+	100% {
+		-webkit-opacity: 1;
+		-ms-opacity: 1;
+		-moz-opacity: 1;
+		-o-opacity: 1;
+		opacity: 1;
+		-webkit-transform: translate3d(-50%, -50%, 0) scale(1);
+		-ms-transform: translate3d(-50%, -50%, 0) scale(1);
+		-moz-transform: translate3d(-50%, -50%, 0) scale(1);
+		-o-transform: translate3d(-50%, -50%, 0) scale(1);
+		transform: translate3d(-50%, -50%, 0) scale(1);
+	}
+}
+@keyframes team_up_check {
+	100% {
+		width: 52px;
+		height: 52px;
+		border: 2px solid #FFF;
+		background: #0095ee;
+	}
+}
+@keyframes team_up_loading {
+	0%, 80%, 100% {
+		-webkit-transform: scale(0);
+		-ms-transform: scale(0);
+		-moz-transform: scale(0);
+		-o-transform: scale(0);
+		transform: scale(0);
+	}
+	40% {
+		-webkit-transform: scale(1);
+		-ms-transform: scale(1);
+		-moz-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+	}
+}
